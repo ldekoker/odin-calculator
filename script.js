@@ -1,3 +1,8 @@
+const OPERATORS = ['+', '-', '*', '/'];
+let variable_a;
+let operator;
+let variable_b;
+
 function add(a, b) {
     return a + b;
 }
@@ -9,4 +14,21 @@ function multiply(a, b) {
 }
 function divide(a, b) {
     return a / b;
+}
+
+function operate(a, operator, b) {
+    switch(operator) {
+        case '+':
+            return add(a, b);
+        case '-':
+            return subtract(a, b);
+        case '*':
+            return multiply(a, b);
+        case '/':
+            return divide(a, b);
+    }
+}
+
+function op(a, operator, b) {
+    console.log(operate(a, operator, b));
 }
