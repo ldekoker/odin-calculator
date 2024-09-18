@@ -1,0 +1,118 @@
+/* Setup */
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Calculator Rules */
+#calculator {
+    height: 700px;
+    width: 500px;
+    background-color: #FF69B4;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Calculator Display Rules */
+#calculator .display{
+    flex: 0 0 75px;
+
+    align-self: stretch;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display output {
+    flex: 1;
+    text-align: left;
+    background-color: #c970ae;
+    margin: 10px;
+    padding: 5px;
+
+    font-size: 36px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Calculator Input Rules */
+#calculator .input {
+    flex: 1;
+    align-self: stretch;
+}
+
+#calculator .input, #calculator .buttons {
+    display: flex;
+}
+
+.input button {
+    flex: 1;
+}
+
+
+/* Number Buttons */
+.number-buttons button{
+    background-color: #51A785;
+}
+
+#calculator .number-buttons {
+    flex: 1;
+    padding: 10px 5px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+}
+
+.number-buttons .row {
+    flex: 1;
+    
+    display:flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+}
+
+/* Left and Right Buttons */
+#calculator .left-buttons, #calculator .right-buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#calculator .left-buttons {
+    padding: 10px 5px 10px 10px;
+}
+
+#calculator .right-buttons {
+    padding: 10px 10px 10px 5px;
+}
+
+#calculator .left-buttons button, #calculator .right-buttons button {
+    flex: 1;
+    width: 75px;
+
+    background-color: white;
+}
