@@ -1,4 +1,14 @@
 /* Setup */
+:root {
+    --calculator-color: #FF69B4;
+    --display-color: #c970ae;
+    --number-button-color: #51A785;
+    --side-button-color: white;
+    --equals-color: #51a785;
+    --gap-length: 10px;
+    --halfgap-length: 5px;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -11,6 +21,7 @@
 body {
     height: 100vh;
     width: 100%;
+    overflow: hidden;
 
     display: flex;
     align-items: center;
@@ -21,7 +32,7 @@ body {
 #calculator {
     height: 700px;
     width: 500px;
-    background-color: #FF69B4;
+    background-color: var(--calculator-color);
 
     align-self: center;
 
@@ -45,8 +56,8 @@ body {
 .display output {
     flex: 1;
     text-align: left;
-    background-color: #c970ae;
-    margin: 10px;
+    background-color: var(--display-color); 
+    margin: var(--gap-length);
     padding: 5px;
 
     font-size: 36px;
@@ -70,28 +81,28 @@ body {
 
 
 /* Number Buttons */
-.number-buttons button{
-    background-color: #51A785;
+.number-keys button{
+    background-color: var(--number-button-color);
 }
 
-#calculator .number-buttons {
+#calculator .number-keys {
     flex: 1;
-    padding: 10px 5px;
+    padding: var(--gap-length) var(--halfgap-length);
     
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    gap: 10px;
+    gap: var(--gap-length);
 }
 
-.number-buttons .row {
+.number-keys .row {
     flex: 1;
     
     display:flex;
     justify-content: center;
     align-items: stretch;
-    gap: 10px;
+    gap: var(--gap-length);
 }
 
 /* Left and Right Buttons */
@@ -99,20 +110,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: var(--gap-length);
 }
 
 #calculator .left-buttons {
-    padding: 10px 5px 10px 10px;
+    padding: var(--gap-length) var(--halfgap-length) var(--gap-length) var(--gap-length);
 }
 
 #calculator .right-buttons {
-    padding: 10px 10px 10px 5px;
+    padding: var(--gap-length) var(--gap-length) var(--gap-length) var(--halfgap-length);
 }
 
 #calculator .left-buttons button, #calculator .right-buttons button {
     flex: 1;
     width: 75px;
+    background-color: var(--side-button-color);
+}
 
-    background-color: white;
+#calculator #equals-button {
+    background-color: var(--equals-color);
 }
