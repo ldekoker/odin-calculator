@@ -6,7 +6,7 @@
     --number-button-color: #51A785;
     --side-button-color: white;
     --equals-color: #51a785;
-    
+
     --number-button-dark: #367059;
     --side-button-dark: rgb(182, 182, 182);
     --equals-dark: #3c7c63;
@@ -83,6 +83,7 @@ body {
 
 .input button {
     flex: 1;
+    font-size: 42px;
 }
 
 
@@ -131,7 +132,6 @@ body {
     padding: var(--gap-length) var(--gap-length) var(--gap-length) var(--halfgap-length);
 }
 
-
 #calculator .left-buttons button, #calculator .right-buttons button {
     flex: 1;
     width: 75px;
@@ -144,6 +144,8 @@ body {
 
 #calculator #equals-button {
     background-color: var(--equals-color);
+    border-radius: 50px;
+    border: solid black 3px;
 }
 
 #calculator #equals-button:active {
