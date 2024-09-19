@@ -2,9 +2,15 @@
 :root {
     --calculator-color: #FF69B4;
     --display-color: #c970ae;
+
     --number-button-color: #51A785;
     --side-button-color: white;
     --equals-color: #51a785;
+    
+    --number-button-dark: #367059;
+    --side-button-dark: rgb(182, 182, 182);
+    --equals-dark: #3c7c63;
+
     --gap-length: 10px;
     --halfgap-length: 5px;
 }
@@ -96,6 +102,10 @@ body {
     gap: var(--gap-length);
 }
 
+.number-keys button:active {
+    background-color: var(--number-button-dark);
+}
+
 .number-keys .row {
     flex: 1;
     
@@ -121,12 +131,21 @@ body {
     padding: var(--gap-length) var(--gap-length) var(--gap-length) var(--halfgap-length);
 }
 
+
 #calculator .left-buttons button, #calculator .right-buttons button {
     flex: 1;
     width: 75px;
     background-color: var(--side-button-color);
 }
 
+#calculator .left-buttons button:active, #calculator .right-buttons button:active {
+    background-color: var(--side-button-dark);
+}
+
 #calculator #equals-button {
     background-color: var(--equals-color);
+}
+
+#calculator #equals-button:active {
+    background-color: var(--equals-dark);
 }
