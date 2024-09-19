@@ -31,17 +31,19 @@ function operate(a, operator, b) {
 }
 
 function clear_display() {
-    variable_a = 0;
-    operator = '';
-    variable_b = 0;
+    variable_a = null;
+    operator = null;
+    variable_b = null;
     displayItems();
 }
 
 function displayItems() {
-    if (operator === '') {
-        display.textContent = `${variable_b}`;
+    if (operator === null) {
+        let var_b;
+        (variable_b === null)? var_b = 0 : var_b = variable_b;
+        display.textContent = `${var_b}`;
     }
-    else if (variable_b === 0) {
+    else if (variable_b === null) {
         display.textContent = `${variable_a} ${operator}`
     }
     else {
@@ -65,6 +67,9 @@ function button_click(button) {
 }
 
 function num_click(num) {
+    if (variable_b === null) {
+        variable_b = 0;
+    }
     variable_b = (variable_b * 10) + parseInt(num);
     displayItems();
 }
@@ -72,21 +77,38 @@ function operator_click(button) {
     if (variable_a && variable_b) {
         resolve_equation();
     }
+    if (variable_b === null) {
+        variable_b = 0;
+    }
     variable_a = variable_b;
-    variable_b = 0;
+    variable_b = null;
     operator = button;
     displayItems();
 }
 function equals_click() {
-    resolve_equation();
-    displayItems();
+    if (!(check_null())){
+        resolve_equation();
+        displayItems();
+    }
 }
 
 function resolve_equation() {
     variable_b = operate(variable_a, operator, variable_b);
-    variable_a = 0;
-    operator = '';
+    variable_a = null;
+    operator = null;
     displayItems(); 
+}
+
+function display_error() {
+    clear_display();
+    display.textContent = 'ERROR';
+}
+
+function check_null() {
+    if (variable_a === null && operator === null && variable_b === null) {
+        display_error();
+        return true;
+    }
 }
 
 function main() { 
@@ -97,9 +119,9 @@ function main() {
       });
 
     
-    variable_a = 0;
-    operator = '';
-    variable_b = 0;
+    variable_a = null;
+    operator = null;
+    variable_b = null;
     displayItems();
 }
 
